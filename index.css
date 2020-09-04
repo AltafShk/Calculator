@@ -1,0 +1,64 @@
+.outer-container{
+    margin: auto;
+    width: 360px;
+    height: 400px;
+    background-color: burlywood;
+}
+
+
+.container{
+    padding: 5px;
+}
+
+
+.display-window{
+    background-color: dimgray;
+    height: 50px;
+}
+
+#result{
+    float: right;
+    font-size: 40px;
+    margin: 0px;
+    margin-right: 3px;
+}
+
+.button-window{
+    background-color: lightskyblue;
+    /* height: 300px; */
+}
+
+
+.button-row{
+    display: flex;
+}
+
+.button{
+    flex: 1;
+    height: 60px;
+    
+}
+
+
+
+.name-tag{
+    flex: 29;
+    margin-bottom: 0;
+    font-size: 20px;
+}
+
+#button-equal{
+    flex: 8;
+    margin: 0;
+}
+
+.button-txt{
+    background-color: lime;
+    width: 10px;
+}
+
+.operator:focus{
+    background-color: mediumslateblue;
+}
+
+/* add button press color */
