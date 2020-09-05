@@ -18,7 +18,19 @@ const calculate = (n1, n2, operator) => {
     } else if (operator === 'multiply') {
       result = n1 * n2
     } else if (operator === 'divide') {
+      if(n2 === 0){
+          alert("Operation not supported - division by 0")
+          calculator.dataset.firstNum = ''
+        calculator.dataset.modNum = ''
+        calculator.dataset.operator = ''
+        calculator.dataset.previousKeyType = ''
+        display.textContent = '0'
+        calculator.dataset.previousKeyType = 'clear'
+
+      }
+      else{
       result = n1 / n2
+      }
     }
     
     return result
@@ -85,8 +97,17 @@ buttons.addEventListener('click', event => {
     
     if (action === "num") {
 
+        if(previousKeyType === "equal"){
+            calculator.dataset.firstNum = ''
+            calculator.dataset.modNum = ''
+            calculator.dataset.operator = ''
+            calculator.dataset.previousKeyType = ''
+            display.textContent = buttonValue
+            calculator.dataset.previousKeyType = 'clear'
+        }
+
         // console.log(displayedValue)
-        if (displayedValue === '0' || previousKeyType === 'operator' || previousKeyType === 'equal') {
+        else if (displayedValue === '0' || previousKeyType === 'operator' || previousKeyType === 'equal') {
 
             if(previousKeyType === 'equal'){
                 calculator.dataset.edgecase = '1'
